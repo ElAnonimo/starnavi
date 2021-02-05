@@ -8,14 +8,12 @@ import { v4 as uuidv4 } from "uuid";
 import Cell from "./components/Cell";
 import "./App.scss";
 
-const rows = 5;
-const cols = 5;
-const statItems = 5;
+const cellClassName = "size5";
 
 const App = () => {
   const [cellSizes, setCellSizes] = useState({});
-  const [cellClassName, setCellClassName] = useState("size5");
   const [stats, setStats] = useState([]);
+  const [size, setSize] = useState(5);
 
   const selectRef = useRef(null);
 
@@ -31,13 +29,12 @@ const App = () => {
       .catch(ex => console.log("error fetching data:", ex));
   }, []);
 
-
   const onBtnClick = () => {
-    setCellClassName(`size${selectRef.current?.value}`);
+    setSize(selectRef.current?.value);
   };
 
   const onMouseOver = (rowIdx, colIdx) => {
-    if (stats.length >= statItems) {
+    if (stats.length >= size) {
       stats.push({ rowIdx: rowIdx + 1, colIdx: colIdx + 1 });
       stats.shift();
       setStats([...stats]);
@@ -52,9 +49,9 @@ const App = () => {
 
   const grid = [];
 
-  for (let row = 0; row < rows; row++) {
+  for (let row = 0; row < size; row++) {
     const currRow = [];
-    for (let col = 0; col < cols; col++) {
+    for (let col = 0; col < size; col++) {
       currRow.push(col);
     }
     grid.push(currRow);
