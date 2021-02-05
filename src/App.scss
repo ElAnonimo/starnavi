@@ -1,0 +1,80 @@
+@import "styleVars";
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 $gap-main;
+  margin: 0 auto;
+  display: flex;
+}
+
+.cell-size {
+  height: 2 * $gap-main;
+  margin-right: $gap-main;
+  margin-bottom: $gap-main;
+  margin-top: $gap-main;
+}
+
+.start-input {
+  height: 30px;
+  background-color: #0075d8;
+  color: #ffffff;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+}
+
+.grid-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+}
+
+.stats {
+  margin-left: $gap-main;
+  &-title {
+    line-height: 2 * $gap-main;
+    margin-bottom: $gap-main;
+    margin-top: $gap-main;
+  }
+  &-item {
+    width: 150px;
+    padding-top: 2 * $gap-small;
+    padding-bottom: 2 * $gap-small;
+    padding-left: $gap-small;
+    background-color: #fbf8e3;
+    color: #8e7342;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+}
