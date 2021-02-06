@@ -31,6 +31,7 @@ const App = () => {
 
   const onBtnClick = () => {
     setSize(selectRef.current?.value);
+    setStats([]);
   };
 
   const onMouseOver = (rowIdx, colIdx) => {
